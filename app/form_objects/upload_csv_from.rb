@@ -20,7 +20,6 @@ class UploadCsvFrom
   private
 
     def persist!
-      binding.pry
       import_record.file = file
       import_record.save!
     end
