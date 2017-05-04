@@ -1,0 +1,9 @@
+id,manufacturer,price,used,note
+1,Honda,1340,FALSE,
+3,Skoda,120,TRUE,cool car
+4,,100,TRUE,
+5,Peogeot,200,FALSE,
+6,,300,,
+7,Skoda,300,TRUE,cool car
+8,Audi,,FALSE,another cool car
+9,,,,

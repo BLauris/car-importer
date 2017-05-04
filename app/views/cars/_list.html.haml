@@ -1,0 +1,26 @@
+%table.table.table-striped
+  %thead
+    %tr
+      %th.text-center
+        ID
+      %th.text-center
+        Manufacturer
+      %th.text-center
+        Price
+      %th.text-center
+        Used
+      %th.text-center
+        Note
+  %tbody
+    - cars.each do |car|
+      %tr.text-center
+        %td
+          = car.id
+        %td
+          = car.manufacturer
+        %td
+          = car.price
+        %td
+          = car.used
+        %td
+          = car.note

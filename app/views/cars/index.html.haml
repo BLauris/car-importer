@@ -1,0 +1,8 @@
+.page-header
+  %h1
+    Car List
+    %small
+      = link_to "Delete All", delete_all_cars_path, class: "btn btn-xs btn-danger", data: { confirm: "Are you sure?" }, method: :delete
+      = link_to "Import CSV", new_import_cars_path, class: "btn btn-xs btn-primary"
+
+= render partial: "cars/list", locals: { cars: @cars }

@@ -1,0 +1,52 @@
+.page-header
+  %h1
+    Import Preview
+    %small.pull-right
+      = link_to "Back to car list", root_path, class: "btn btn-xs btn-primary"
+      = link_to "Import valid rows", import_car_path(@presenter.import_record_id), class: "btn btn-xs btn-primary"
+
+%table.table
+  %thead
+    %tr
+      %th.text-center
+        Total Count
+      %th.text-center
+        Valid Count
+      %th.text-center
+        Invalid Count
+  %tbody
+    %tr.text-center
+      %td
+        %span.label.label-info
+          = @presenter.total_count
+      %td
+        %span.label.label-success
+          = @presenter.valid_count
+      %td
+        %span.label.label-danger
+          = @presenter.invalid_count
+
+- if @presenter.invalid_rows.any?
+  %h2
+    Invalid rows
+  %table.table
+    %thead
+      %tr
+        %th.text-center
+          Line
+        - @presenter.columns.each do |column|
+          %th.text-center
+            = column
+    %tbody
+      - @presenter.invalid_rows.each do |row|
+        %tr.text-center
+          %td
+            = row.line
+          - @presenter.columns.each do |column|
+            %td
+              = row.messages[column.to_sym].to_sentence
+
+- if @presenter.valid_rows.any?
+  %h2
+    Valid rows
+  = render partial: "cars/list", locals: { cars: @presenter.valid_rows }
