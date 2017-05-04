@@ -31,6 +31,7 @@ class CarsController < ApplicationController
 
   def delete_all
     Car.delete_all
+    ImportRecord.delete_all
     flash[:notice] = "You have removed all cars!"
     redirect_to root_path
   end
