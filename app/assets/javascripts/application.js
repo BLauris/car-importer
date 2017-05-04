@@ -11,11 +11,6 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require bootstrap 
-//= require bootstrap-filestyle
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
-
-$(":file").filestyle({
-  input: false
-})
