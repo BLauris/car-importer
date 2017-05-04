@@ -17,6 +17,9 @@
 !/log/.keep
 !/tmp/.keep
 
+# Igonre uploads
+/public/uploads
+
 /node_modules
 /yarn-error.log
 
