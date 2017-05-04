@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  username: postgres
+  password: postgres
+  host: localhost
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: car_importer_dev
+
+test:
+  <<: *default
+  database: car_importer_test
