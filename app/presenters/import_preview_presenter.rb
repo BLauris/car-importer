@@ -18,6 +18,7 @@ class ImportPreviewPresenter
     invalid_rows.size
   end
 
+  # TODO: Move to parser file. this is not presenter logic.
   def parse_data
     import_record = ImportRecord.find(import_record_id)
     line = 1
