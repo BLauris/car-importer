@@ -18,9 +18,15 @@ class CarsController < ApplicationController
     end
   end
 
+  def cancel_import
+    ImportRecord.find(params[:id]).destroy
+    flash[:notice] = "Import was canceled."
+    redirect_to root_path
+  end
+
   def import_preview
     @presenter = ImportPreviewPresenter.new(import_record_id: params[:id])
-    @presenter.parse_data
+    @presenter.validate_rows
   end
 
   def import
@@ -30,8 +36,10 @@ class CarsController < ApplicationController
   end
 
   def delete_all
+    # NOTE: Might be worth to create a repository.
     Car.delete_all
     ImportRecord.delete_all
+
     flash[:notice] = "You have removed all cars!"
     redirect_to root_path
   end

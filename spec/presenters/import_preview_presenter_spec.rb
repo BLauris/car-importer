@@ -6,7 +6,7 @@ describe UploadCsvFrom do
   let(:presenter) { ImportPreviewPresenter.new(import_record_id: prepared_data.import_record.id) }
 
   before do
-    presenter.parse_data
+    presenter.validate_rows
   end
 
   it "returns correct total row count" do

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :cars, only: [:index, :new, :create] do
     get :import_preview, on: :member
     get :import, on: :member
+    delete :cancel_import, on: :member
 
     collection do
       get :new_import

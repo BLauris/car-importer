@@ -2,7 +2,7 @@
   %h1
     Import Preview
     %small.pull-right
-      = link_to "Back to car list", root_path, class: "btn btn-xs btn-primary"
+      = link_to "Cancel", cancel_import_car_path(@presenter.import_record_id), class: "btn btn-xs btn-primary", method: :delete
       = link_to "Import valid rows", import_car_path(@presenter.import_record_id), class: "btn btn-xs btn-primary"
 
 %table.table
