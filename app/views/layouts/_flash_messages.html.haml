@@ -1,0 +1,5 @@
+- if flash.any?
+  - flash.each do |key, value|
+    -# - binding.pry
+    #flash-message{class: "alert #{map_flash_keys(key)}"}
+      = value
